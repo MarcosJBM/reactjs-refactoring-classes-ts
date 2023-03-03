@@ -15,7 +15,7 @@ class Dashboard extends Component {
       editingFood: {},
       modalOpen: false,
       editModalOpen: false,
-    }
+    };
   }
 
   async componentDidMount() {
@@ -37,26 +37,26 @@ class Dashboard extends Component {
     } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   handleUpdateFood = async food => {
     const { foods, editingFood } = this.state;
 
     try {
-      const foodUpdated = await api.put(
-        `/foods/${editingFood.id}`,
-        { ...editingFood, ...food },
-      );
+      const foodUpdated = await api.put(`/foods/${editingFood.id}`, {
+        ...editingFood,
+        ...food,
+      });
 
       const foodsUpdated = foods.map(f =>
-        f.id !== foodUpdated.data.id ? f : foodUpdated.data,
+        f.id !== foodUpdated.data.id ? f : foodUpdated.data
       );
 
       this.setState({ foods: foodsUpdated });
     } catch (err) {
       console.log(err);
     }
-  }
+  };
 
   handleDeleteFood = async id => {
     const { foods } = this.state;
@@ -66,23 +66,23 @@ class Dashboard extends Component {
     const foodsFiltered = foods.filter(food => food.id !== id);
 
     this.setState({ foods: foodsFiltered });
-  }
+  };
 
   toggleModal = () => {
     const { modalOpen } = this.state;
 
     this.setState({ modalOpen: !modalOpen });
-  }
+  };
 
   toggleEditModal = () => {
     const { editModalOpen } = this.state;
 
     this.setState({ editModalOpen: !editModalOpen });
-  }
+  };
 
   handleEditFood = food => {
     this.setState({ editingFood: food, editModalOpen: true });
-  }
+  };
 
   render() {
     const { modalOpen, editModalOpen, editingFood, foods } = this.state;
@@ -102,7 +102,7 @@ class Dashboard extends Component {
           handleUpdateFood={this.handleUpdateFood}
         />
 
-        <FoodsContainer data-testid="foods-list">
+        <FoodsContainer data-testid='foods-list'>
           {foods &&
             foods.map(food => (
               <Food
@@ -116,6 +116,6 @@ class Dashboard extends Component {
       </>
     );
   }
-};
+}
 
 export default Dashboard;

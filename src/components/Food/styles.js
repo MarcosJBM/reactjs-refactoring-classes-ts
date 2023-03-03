@@ -13,8 +13,8 @@ export const Container = styled.div`
     text-align: center;
 
     ${props =>
-    !props.available &&
-    css`
+      !props.available &&
+      css`
         opacity: 0.3;
       `};
 
