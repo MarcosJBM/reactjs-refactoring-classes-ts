@@ -1,25 +1,36 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
-  background: #f0f0f5;
+interface ContainerProps {
+  available: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
   border-radius: 8px;
 
+  background: #f0f0f5;
+
   header {
-    background: #ffb84d;
-    border-radius: 8px 8px 0px 0px;
-    height: 192px;
     overflow: hidden;
-    transition: 0.3s opacity;
+
+    height: 192px;
+
     text-align: center;
 
-    ${props =>
-      !props.available &&
+    border-radius: 8px 8px 0px 0px;
+
+    transition: 0.3s opacity;
+
+    background: #ffb84d;
+
+    ${({ available }) =>
+      !available &&
       css`
         opacity: 0.3;
       `};
 
     img {
       pointer-events: none;
+
       user-select: none;
     }
   }
@@ -32,15 +43,16 @@ export const Container = styled.div`
     }
 
     p {
-      color: #3d3d4d;
-
       margin-top: 16px;
+
+      color: #3d3d4d;
     }
 
     .price {
-      font-style: normal;
       font-size: 24px;
       line-height: 34px;
+      font-style: normal;
+
       color: #39b100;
 
       b {
@@ -55,19 +67,25 @@ export const Container = styled.div`
     align-items: center;
 
     padding: 20px 30px;
-    background: #e4e4eb;
+
     border-radius: 0px 0px 8px 8px;
+
+    background: #e4e4eb;
 
     div.icon-container {
       display: flex;
 
       button {
-        background: #fff;
-        padding: 10px;
-        border-radius: 8px;
         display: flex;
+
+        padding: 10px;
+
         border: none;
+        border-radius: 8px;
+
         transition: 0.1s;
+
+        background: #fff;
 
         svg {
           color: #3d3d4d;
@@ -90,39 +108,49 @@ export const Container = styled.div`
       .switch {
         position: relative;
         display: inline-block;
+
         width: 88px;
         height: 32px;
+
         margin-left: 12px;
 
         & input {
-          opacity: 0;
           width: 0;
           height: 0;
+          opacity: 0;
         }
 
         .slider {
           position: absolute;
-          cursor: pointer;
           top: 0;
           left: 0;
           right: 0;
           bottom: 0;
+
+          border-radius: 16px;
+
+          cursor: pointer;
+
           background-color: #c72828;
+
           -webkit-transition: 0.4s;
           transition: 0.4s;
-          border-radius: 16px;
 
           &:before {
             position: absolute;
             content: '';
-            height: 20px;
-            width: 40px;
             left: 8px;
             bottom: 6px;
-            background-color: white;
+
+            height: 20px;
+            width: 40px;
+
+            border-radius: 10px;
+
             -webkit-transition: 0.4s;
             transition: 0.4s;
-            border-radius: 10px;
+
+            background-color: white;
           }
         }
 

@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
-import Food from '../../components/Food';
+import { Food } from '../../components/Food';
 import { Header } from '../../components/Header';
 import ModalAddFood from '../../components/ModalAddFood';
 import ModalEditFood from '../../components/ModalEditFood';
 import { api } from '../../services';
 import { FoodsContainer } from './styles';
 
-interface FoodProps {
+export interface FoodProps {
   id: number;
   name: string;
   description: string;
