@@ -1,8 +1,7 @@
-import { FiEdit3, FiTrash } from 'react-icons/fi';
 import { useState } from 'react';
+import { FiEdit3, FiTrash } from 'react-icons/fi';
 
 import { FoodProps } from '../../pages/Dashboard';
-
 import { api } from '../../services';
 import { Container } from './styles';
 

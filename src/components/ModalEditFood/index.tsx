@@ -1,11 +1,11 @@
+import { FormHandles } from '@unform/core';
 import { createRef } from 'react';
 import { FiCheckSquare } from 'react-icons/fi';
 
-import { Form } from './styles';
-import { Modal } from '../Modal';
-import { Input } from '../Input';
 import { FoodProps, UpdatedFoodProps } from '../../pages/Dashboard';
-import { FormHandles } from '@unform/core';
+import { Input } from '../Input';
+import { Modal } from '../Modal';
+import { Form } from './styles';
 
 interface ModalEditFoodProps {
   isOpen: boolean;
