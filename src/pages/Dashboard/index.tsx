@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Food } from '../../components/Food';
-import { Header } from '../../components/Header';
-import { ModalAddFood } from '../../components/ModalAddFood';
-import { ModalEditFood } from '../../components/ModalEditFood';
+import { Food, Header, ModalAddFood, ModalEditFood } from '../../components';
 import { api } from '../../services';
 import { FoodsContainer } from './styles';
 
