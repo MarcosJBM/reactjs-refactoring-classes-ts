@@ -1,23 +1,18 @@
+import { useField } from '@unform/core';
 import {
+  InputHTMLAttributes,
+  useCallback,
   useEffect,
   useRef,
   useState,
-  useCallback,
-  FunctionComponent,
-  InputHTMLAttributes,
 } from 'react';
-
-import { useField } from '@unform/core';
+import { IconType } from 'react-icons';
 
 import { Container } from './styles';
 
-interface IconProps {
-  size: number;
-}
-
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
-  icon: FunctionComponent<IconProps>;
+  icon?: IconType;
 }
 
 export function Input({ name, icon: Icon, ...rest }: InputProps) {
