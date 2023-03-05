@@ -2,21 +2,24 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   * {
+    box-sizing: border-box;
+
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    
     outline: 0;
   }
 
   body {
-    background: #fff;
-    color: #FFF;
     -webkit-font-smoothing: antialiased;
+
+    color: #FFF;
+    background: #fff;
   }
 
   body, input, button {
+    font-size: 1rem;
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
   }
 
   h1, h2, h3, h4, h5, h6, strong {
