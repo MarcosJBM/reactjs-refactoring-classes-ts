@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Food } from '../../components/Food';
 import { Header } from '../../components/Header';
 import { ModalAddFood } from '../../components/ModalAddFood';
-import ModalEditFood from '../../components/ModalEditFood';
+import { ModalEditFood } from '../../components/ModalEditFood';
 import { api } from '../../services';
 import { FoodsContainer } from './styles';
 
@@ -15,6 +15,8 @@ export interface FoodProps {
   available: boolean;
   image: string;
 }
+
+export type UpdatedFoodProps = Omit<FoodProps, 'id' | 'available'>;
 
 export function Dashboard() {
   const [foods, setFoods] = useState<FoodProps[]>([]);
@@ -36,7 +38,7 @@ export function Dashboard() {
     }
   }
 
-  async function handleUpdateFood(food: Omit<FoodProps, 'id' | 'available'>) {
+  async function handleUpdateFood(food: UpdatedFoodProps) {
     try {
       const response = await api.put<FoodProps>(`/foods/${editingFood.id}`, {
         ...editingFood,
