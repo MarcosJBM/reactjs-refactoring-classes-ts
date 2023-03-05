@@ -50,8 +50,8 @@ export const Container = styled.div<ContainerProps>`
 
     .price {
       font-size: 24px;
-      line-height: 34px;
       font-style: normal;
+      line-height: 34px;
 
       color: #39b100;
 
