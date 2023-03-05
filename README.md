@@ -1,5 +1,5 @@
 ## 📝 Todo
 
 - [x] Configurar o TypeScript
-- [ ] Migrar a aplicação de JavaScript para TypeScript
-- [ ] Migrar a aplicação de Class Components para Function Components
+- [x] Migrar a aplicação de JavaScript para TypeScript
+- [x] Migrar a aplicação de Class Components para Function Components
